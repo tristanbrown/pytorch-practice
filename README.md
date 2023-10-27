@@ -1,2 +1,2 @@
-# python-template
-A template for personal Python projects.
+# pytorch-practice
+A workspace for practicing with Pytorch
