@@ -9,6 +9,11 @@ services:
     extends:
       file: ${JUPYTER_SERVICE}
       service: jupyter
+    image: tristanbrown/pytorch-practice
+    labels:
+      caddy: localhost:8081, ${HOSTNAME}:8081
+      caddy.reverse_proxy_0: /tanspaces.${COMPOSE_PROJECT_NAME}* "{{upstreams 8888}}"
+      caddy.tls: "internal"
 
 networks:
   tanspaces:
